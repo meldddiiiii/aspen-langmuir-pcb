@@ -1,0 +1,8 @@
+(version 1)
+(rule "OPA454 pad spacing (TI land pattern)"
+  (constraint clearance (min 0.4mm))
+  (condition "A.memberOfFootprint('U1') && B.memberOfFootprint('U1')"))
+
+(rule "Terminal block pin pitch (part rated for this voltage)"
+  (constraint clearance (min 0.3mm))
+  (condition "(A.memberOfFootprint('PS2') && B.memberOfFootprint('PS2')) || (A.memberOfFootprint('PS3') && B.memberOfFootprint('PS3')) || (A.memberOfFootprint('OSC.1') && B.memberOfFootprint('OSC.1')) || (A.memberOfFootprint('Probe/GND1') && B.memberOfFootprint('Probe/GND1'))"))
